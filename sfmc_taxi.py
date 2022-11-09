@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python3
 import requests, redis, os, json
 from urllib.parse import urljoin, urlencode
 # debug import curlify
