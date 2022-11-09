@@ -1,6 +1,7 @@
+#!/usr/bin/env bash
 import requests, redis, os, json
 from urllib.parse import urljoin, urlencode
-import curlify
+# debug import curlify
 
 # Persistent token, uses Redis for storage
 class PersistentAuthToken:
@@ -82,7 +83,7 @@ if __name__ == '__main__':
         if res.status_code != 200:
             raise ValueError(res.status_code, res.text)
         else:
-            # print(curlify.to_curl(res.request))
+            # debug print(curlify.to_curl(res.request))
             resObj = res.json()
             if resObj.get('count') > 0:
                 for i in resObj.get('items'):
